@@ -9,8 +9,13 @@
 }
 
 h3 {
+	margin-top: 1rem;
 	&:before {
 		content: '>>> ';
 	}
+}
+
+input {
+	color: black;
 }
 
