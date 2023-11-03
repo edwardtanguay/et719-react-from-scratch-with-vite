@@ -1,6 +1,7 @@
-import { FormTest } from "./components/FormTest";
-import { ImageTest } from "./components/ImageTest";
 import "./main.scss";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+import { Summary } from "./pages/Summary";
+import { Details } from "./pages/Details";
 
 const App = () => {
 	return (
@@ -8,20 +9,26 @@ const App = () => {
 			<h1 className="text-3xl text-yellow-200 mb-3">
 				React Vite site from scratch
 			</h1>
-			<h2 className="mt-[-.7rem] mb-4 text-gray-400 italic">
-				This site was built from scratch with Vite, based on
-				instructions from{" "}
-				<a
-					target="_blank"
-					className="underline"
-					href="https://frontendmasters.com/courses/complete-react-v8"
-				>
-					this course
-				</a>
-				.
-			</h2>
-			<ImageTest />
-			<FormTest />
+
+			<BrowserRouter>
+				<nav>
+					<ul>
+						<NavLink to="/summary">Summary</NavLink>
+					</ul>
+					<ul>
+						<NavLink to="/details">Details</NavLink>
+					</ul>
+				</nav>
+				<div className="content border p-4">
+					<Routes>
+						<Route path="/summary" element={<Summary />} />
+						<Route path="/details">
+							<Route index element={<Details />} />
+							<Route path=":id" element={<Details />} />
+						</Route>
+					</Routes>
+				</div>
+			</BrowserRouter>
 		</>
 	);
 };
