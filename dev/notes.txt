@@ -1,2 +1,2 @@
-- .. nav horiz
-- home page
+- x nav horiz
+- .. home page
