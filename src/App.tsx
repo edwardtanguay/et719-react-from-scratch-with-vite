@@ -11,7 +11,7 @@ const App = () => {
 			</h1>
 
 			<BrowserRouter>
-				<nav>
+				<nav className="flex gap-3 pb-3">
 					<ul>
 						<NavLink to="/summary">Summary</NavLink>
 					</ul>
@@ -19,7 +19,7 @@ const App = () => {
 						<NavLink to="/details">Details</NavLink>
 					</ul>
 				</nav>
-				<div className="content border p-4">
+				<div className="content border p-4 rounded-lg border-orange-600">
 					<Routes>
 						<Route path="/summary" element={<Summary />} />
 						<Route path="/details">
